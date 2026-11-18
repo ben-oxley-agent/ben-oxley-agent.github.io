@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Wall — a self-hosted family calendar</title>
+<meta name="description" content="Family Wall is a self-hosted family calendar, chores and meal planner for a Raspberry Pi touchscreen. It talks to Google Calendar and Google Tasks on your behalf and stores everything on your own hardware.">
+<style>
+  :root {
+    --cream: #FCFAF6;
+    --ink: #1B1A18;
+    --muted: #5C5852;
+    --rule: #E4DFD6;
+    --accent: #D2604F;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 .4rem;
+  }
+  .tagline { color: var(--muted); font-size: 1.1rem; margin: 0 0 2.5rem; }
+  h2 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--muted);
+    margin: 2.8rem 0 .9rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  p, li { max-width: 38rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .cards { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-top: 1.2rem; }
+  .card { border: 1px solid var(--rule); border-radius: 14px; padding: 1rem 1.1rem; background: #fff; }
+  .card h3 { margin: 0 0 .35rem; font-size: .98rem; }
+  .card p { margin: 0; font-size: .92rem; color: var(--muted); }
+  footer { margin-top: 4rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+  code { background: #F1EDE6; padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main>
+    <h1>Family Wall</h1>
+    <p class="tagline">A self-hosted family calendar, chore chart and meal planner — running on a Raspberry&nbsp;Pi touchscreen on the kitchen wall.</p>
+
+    <p>Family Wall is private software written for one household. It is not distributed, it has no public sign-up, and there is nothing to download. It replaces a commercial smart display by putting the family's own calendars, chores and meals on a screen in the kitchen, and letting people tick things off with a finger.</p>
+
+    <h2>What it does</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Calendars</h3>
+        <p>A week grid of everyone's events, colour-coded per person, with two-way sync so a new appointment added on the wall appears on the phone and vice versa.</p>
+      </div>
+      <div class="card">
+        <h3>Chores &amp; stars</h3>
+        <p>Recurring chores and morning/afternoon/evening routines for each child, ticked off with a tap and paid in stars that can be spent on rewards.</p>
+      </div>
+      <div class="card">
+        <h3>Meals &amp; shopping</h3>
+        <p>A week of dinners pulled from a meal planner, plus a shared shopping list that syncs to Google Tasks.</p>
+      </div>
+      <div class="card">
+        <h3>Weather &amp; bins</h3>
+        <p>Today's forecast and which bin goes out tonight, so nobody has to go and check.</p>
+      </div>
+    </div>
+
+    <h2>How it runs</h2>
+    <p>The whole application runs on hardware in the owner's home: a Raspberry Pi connected to a touchscreen, with a local web server and a SQLite database on the same disk. There is no cloud service, no account system, no analytics and no telemetry sent anywhere. The device is reachable only on the household's own network.</p>
+
+    <h2>Google account access</h2>
+    <p>To show and edit calendars and task lists, Family Wall asks the owner for permission to read and write Google Calendar events and Google Tasks on a single Google account, using Google's standard OAuth&nbsp;2.0 authorisation. That permission is granted directly by the owner, is stored as a token file on the Pi with owner-only permissions, and can be revoked at any time from the owner's Google Account permissions page. Family Wall does not request access to Gmail, Drive, Contacts, Photos or any other Google service.</p>
+
+    <p>What is collected and how it is handled is set out in the <a href="./privacy.html">privacy policy</a>.</p>
+  </main>
+
+  <footer>
+    <p>Family Wall is personal software, not a commercial product. Contact: <a href="https://github.com/ben-oxley-agent">github.com/ben-oxley-agent</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
